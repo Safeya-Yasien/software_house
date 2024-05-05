@@ -19,7 +19,6 @@ ul {
 a {
   text-decoration: none;
 }
-
 body {
   height: 6000px;
   font-family: "Inter", sans-serif;
@@ -342,6 +341,9 @@ body {
   background-color: var(--main-color);
   border-radius: 50%;
   outline: 15px solid #ffffff5e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .team .image .play svg {
   font-size: 21px;
