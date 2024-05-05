@@ -63,5 +63,23 @@ function scrollToCard(card) {
   card.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+// show review
+function showReview() {
+  const userText = document.querySelectorAll(".user-text"),
+    userImgCountainer = document.querySelectorAll(".user-img-container");
+
+  userImgCountainer.forEach((container, index) => {
+    container.addEventListener("click", () => {
+      userImgCountainer.forEach((img, i) => {
+        img.classList.remove("active-img");
+        userText[i].classList.remove("active-text");
+      });
+      container.classList.add("active-img");
+      userText[index].classList.add("active-text");
+    });
+  });
+}
+
+showReview();
 removActiveClass();
 intializeControls();
