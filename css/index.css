@@ -7,7 +7,7 @@
   --black-color: #000;
   --white-color: #fff;
   --main-color: #912992;
-  --main-transition: 0.3s;
+  --main-transition: 0.4s;
 }
 
 ul {
@@ -27,7 +27,7 @@ body {
 
 /* navbar */
 .navbar {
-  position: fixed;
+  position: sticky;
   z-index: 999;
   width: 100%;
   background-color: var(--black-color);
@@ -44,12 +44,6 @@ body {
   justify-content: space-between;
   padding: 5px 0;
 }
-
-.navbar .logo-container {
-  /* margin-left: 0;
-    margin-right: auto; */
-}
-
 .navbar .logo {
   display: block;
 }
@@ -85,15 +79,6 @@ body {
 .navbar .navigation-links.show {
   display: block;
 }
-
-@media (max-width: 767px) {
-  .navbar .navigation-links {
-  }
-}
-
-.navbar .navigation-links li {
-}
-
 .navbar .navigation-links .nav-link {
   padding: 0 10px;
   color: var(--black-color);
@@ -109,13 +94,6 @@ body {
 .navbar .navigation-links .nav-link.active {
   font-weight: bold;
 }
-
-.navbar .navigation-links {
-}
-
-.navbar {
-}
-
 .navbar .menu-bar {
   color: var(--white-color);
   font-size: 25px;
@@ -128,7 +106,6 @@ body {
     display: none;
   }
 }
-
 .btn {
   padding: 14px 25px;
   cursor: pointer;
@@ -145,45 +122,27 @@ body {
   background-color: #530d4c;
   color: var(--white-color);
 }
-
-.navbar .contact {
-}
-
-.navbar {
-}
-
 /* landing */
-.landing {
+.landing,
+.team,
+.companies {
   position: relative;
-  padding-top: 120px;
+  padding-top: 80px;
 }
-
-.landing {
-}
-
-/* .landing .landing-content {
-  display: flex;
-  align-items: center;
-} */
-
 .landing .text {
   line-height: 1.6;
 }
-
 .landing .text h2 {
   font-size: 30px;
   margin-bottom: 28px;
   font-weight: normal;
 }
-
 .landing .text h2 .colored {
   color: var(--main-color);
 }
-
 .landing .text .bold {
   font-weight: bold;
 }
-
 .landing .text p {
   margin-bottom: 70px;
 }
@@ -197,22 +156,14 @@ body {
   background-color: #530d4c;
   color: var(--white-color);
 }
-
 .landing .img img {
   width: 600px;
 }
-
-@media (max-width: 767px) {
-}
-
-.landing {
-}
-
 /* services */
-
 .services {
-  padding-top: 80px;
+  padding: 60px 0;
   overflow: hidden;
+  background-color: #eee;
 }
 
 .services .special-header h2 {
@@ -222,7 +173,6 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .services .container .row {
   overflow-x: auto;
   flex-wrap: nowrap;
@@ -231,23 +181,14 @@ body {
 .services .row::-webkit-scrollbar {
   width: 0;
 }
-
-.services {
-}
-
-.services {
-}
-
 .services .card {
   padding: 20px;
   transition: 0.5s;
 }
-
 .services .card.active {
   border-color: var(--main-color);
   margin-top: 30px;
 }
-
 .services .card h4 {
   text-transform: capitalize;
   color: var(--main-color);
@@ -255,17 +196,9 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
-
 .services .card p {
   font-size: 14px;
 }
-
-.services .card {
-}
-
-.services .card {
-}
-
 .services .card img {
   width: 34px;
   height: 34px;
@@ -273,12 +206,11 @@ body {
   border: 1px solid var(--main-color);
   margin-bottom: 20px;
 }
-
 .services .controls {
   display: flex;
   align-items: center;
   width: fit-content;
-  margin: 0 auto;
+  margin: 25px auto 0;
 }
 .services .controls li {
   width: 8px;
@@ -288,7 +220,162 @@ body {
   margin: 0 4px;
   cursor: pointer;
 }
-
 .services .controls li.active {
   background-color: #0e89d0;
+}
+
+/* team */
+.team,
+.companies {
+  background-color: var(--white-color);
+}
+.team::before,
+.companies .text::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  background: linear-gradient(to right, #912992, #dd3cdf);
+}
+.team::before {
+  left: 250px;
+  top: 0;
+  clip-path: circle(50% at 50% 0);
+}
+@media (max-width: 991px) {
+  .team .team-content {
+    flex-direction: column-reverse;
+  }
+}
+.team .text,
+.companies .text {
+  position: relative;
+  padding: 30px 0;
+}
+.team .text::before,
+.companies .text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #912992, #dd3cdf);
+}
+@media (max-width: 991px) {
+  .team .text::before,
+  .companies .text::before {
+    display: none;
+  }
+}
+.team .text .title {
+  margin-bottom: 30px;
+}
+.team .text .description {
+  font-size: 16px;
+  color: gray;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+.team .text .description .colored {
+  color: var(--main-color);
+}
+.team .text .custom-link {
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.team .text .custom-link .arrow {
+  display: flex;
+  align-items: center;
+  margin-top: 1px;
+  transition: var(--main-transition) ease;
+  transform: translateX(8px);
+}
+.team .text .custom-link:hover .arrow {
+  animation: arrow-right 0.5s infinite linear;
+}
+.team .image {
+  position: relative;
+}
+.team .image img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+.team .image .play {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--white-color);
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  outline: 15px solid #ffffff5e;
+}
+.team .image .play svg {
+  font-size: 21px;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+@keyframes arrow-right {
+  0%,
+  100% {
+    transform: translateX(8px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+}
+
+/* companies */
+.companies {
+  overflow: hidden;
+}
+.companies .text {
+  position: relative;
+}
+.companies .text::after {
+  right: 30%;
+  bottom: 0;
+  clip-path: circle(50% at 50% 100%);
+}
+
+.companies .text .title {
+  line-height: 1.4;
+}
+.companies .auto-slider-container {
+  background-color: #eee;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.companies .auto-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: rotation 30s infinite linear;
+}
+.companies .auto-slider-container:hover .auto-slider {
+  animation-play-state: paused;
+}
+.companies .auto-slider li {
+  margin: 0 15px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes rotation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
