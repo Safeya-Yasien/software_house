@@ -1,6 +1,8 @@
 const navigationLinksList = document.querySelector(".navigation-links");
 const navigationLinks = document.querySelectorAll(".nav-link");
 const menuBar = document.querySelector(".menu-bar");
+const categories = document.querySelectorAll(".categories .category");
+const languages = document.querySelectorAll(".languages .language");
 const cards = document.querySelectorAll(".services .card"),
   controls = document.querySelector(".controls");
 
@@ -79,6 +81,27 @@ function showReview() {
     });
   });
 }
+
+// filter language
+categories.forEach((category) => {
+  category.addEventListener("click", () => {
+    const valueAttr = category.getAttribute("data-filter");
+
+    languages.forEach((language) => {
+      language.style.display = "none";
+      if (
+        language.getAttribute("data-filter").toLowerCase() ==
+        valueAttr.toLowerCase()
+      ) {
+        language.style.display = "flex";
+      }
+    });
+    categories.forEach((category) => {
+      category.classList.remove("active");
+    });
+    category.classList.add("active");
+  });
+});
 
 showReview();
 removActiveClass();
