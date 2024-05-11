@@ -84,6 +84,16 @@ body {
   justify-content: space-between;
   padding: 5px 0;
 }
+.navbar .nav-links-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+@media (max-width: 767px) {
+  .navbar .nav-links-container {
+    flex-direction: row-reverse;
+  }
+}
 .navbar .logo {
   display: block;
 }
@@ -530,6 +540,13 @@ footer {
   left: -200px;
   border-radius: 50%;
 }
+
+@media (max-width: 1197px) {
+  .choose-us .testimonials .controls .arrow {
+    display: none;
+  }
+}
+
 /* case stuides */
 .case-studies {
   background-color: var(--main-bg-color);
